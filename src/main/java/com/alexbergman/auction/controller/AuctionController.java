@@ -20,10 +20,8 @@ public class AuctionController {
     }
 
     @GetMapping(value = "/auctionItems/{auctionItemId}")
-    public AuctionItem getAuctionItem(@PathVariable Integer auctionItemId) {
-        AuctionItem auctionItem = new AuctionItem();
-
-        return auctionItem;
+    public AuctionItem getAuctionItem(@PathVariable String auctionItemId) {
+        return auctionService.getAuctionItem(auctionItemId);
     }
 
     @PostMapping(value = "/auctionItems")
@@ -35,7 +33,7 @@ public class AuctionController {
     @PostMapping(value = "/bids")
     public void postBid(@RequestBody AuctionBid auctionBid) {
 
-
+        auctionService.saveAuctionBid(auctionBid);
 
     }
 

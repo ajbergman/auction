@@ -8,17 +8,18 @@ import javax.persistence.Id;
 public class AuctionItem {
 
     @Id
-    @GeneratedValue
-    private Integer auctionItemId;
-    private Double currentBid;
+    private String auctionItemId;
     private Double reservePrice;
-//    private Item item;
+    private Item item;
 
-    public Integer getAuctionItemId() {
+    private Double currentBid;
+    private String bidderName;
+
+    public String getAuctionItemId() {
         return auctionItemId;
     }
 
-    public void setAuctionItemId(Integer auctionItemId) {
+    public void setAuctionItemId(String auctionItemId) {
         this.auctionItemId = auctionItemId;
     }
 
@@ -30,11 +31,27 @@ public class AuctionItem {
         this.currentBid = currentBid;
     }
 
+    public String getBidderName() {
+        return bidderName;
+    }
+
+    public void setBidderName(String bidderName) {
+        this.bidderName = bidderName;
+    }
+
     public Double getReservePrice() {
         return reservePrice;
     }
 
     public void setReservePrice(Double reservePrice) {
         this.reservePrice = reservePrice;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
     }
 }
