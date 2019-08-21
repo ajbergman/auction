@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "05151f84-6bea-4e07-b675-1371136bd583",
+		"name": "Auction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAuctionItems",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auctionItems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auctionItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAuctionItem",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/auctionItems/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auctionItems",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postAuctionItems",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"reservePrice\": 10450.00,\n\t\"item\": {\n\t\t\"itemId\": \"abcd\",\n\t\t\"description\": \"item description\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/auctionItems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auctionItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postBid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\t\"auctionItemId\": 1,\r\t\"maxAutoBidAmount\": 9500.00,\r\t\"bidderName\": \"ABC Dealership\"\r}\r"
+				},
+				"url": {
+					"raw": "http://localhost:8080/bids",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"bids"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
