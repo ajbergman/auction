@@ -20,7 +20,7 @@ public class AuctionController {
     }
 
     @GetMapping(value = "/auctionItems/{auctionItemId}")
-    public AuctionItem getAuctionItem(@PathVariable String auctionItemId) {
+    public AuctionItem getAuctionItem(@PathVariable Long auctionItemId) {
         return auctionService.getAuctionItem(auctionItemId);
     }
 

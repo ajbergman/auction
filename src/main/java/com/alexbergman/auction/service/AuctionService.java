@@ -5,6 +5,7 @@ import com.alexbergman.auction.entity.AuctionBid;
 import com.alexbergman.auction.entity.AuctionItem;
 import com.alexbergman.auction.repository.AuctionBidRepository;
 import com.alexbergman.auction.repository.AuctionItemRepository;
+import com.alexbergman.auction.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,19 +19,23 @@ public class AuctionService {
     AuctionItemRepository auctionItemRepository;
 
     @Autowired
+    ItemRepository itemRepository;
+
+    @Autowired
     AuctionBidRepository auctionBidRepository;
 
     public List<AuctionItem> getAuctionItems() {
         return auctionItemRepository.findAll();
     }
 
-    public AuctionItem getAuctionItem(String auctionItemId) {
+    public AuctionItem getAuctionItem(Long auctionItemId) {
         return auctionItemRepository.findById(auctionItemId).get();
     }
 
     public AuctionItem saveAuctionItem(AuctionItem auctionItem) {
         if(auctionItem.getCurrentBid() == null)
             auctionItem.setCurrentBid(0.0);
+        itemRepository.save(auctionItem.getItem());
         auctionItemRepository.save(auctionItem);
         return auctionItem;
     }

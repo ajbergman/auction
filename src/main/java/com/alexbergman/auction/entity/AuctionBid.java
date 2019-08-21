@@ -10,15 +10,15 @@ public class AuctionBid {
     @Id
     @GeneratedValue
     private Integer auctionBidId;
-    private String auctionItemId;
+    private Long auctionItemId;
     private Double maxAutoBidAmount;
     private String bidderName;
 
-    public String getAuctionItemId() {
+    public Long getAuctionItemId() {
         return auctionItemId;
     }
 
-    public void setAuctionItemId(String auctionItemId) {
+    public void setAuctionItemId(Long auctionItemId) {
         this.auctionItemId = auctionItemId;
     }
 

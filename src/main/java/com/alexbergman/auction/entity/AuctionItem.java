@@ -3,23 +3,27 @@ package com.alexbergman.auction.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class AuctionItem {
 
     @Id
-    private String auctionItemId;
+    @GeneratedValue
+    private Long auctionItemId;
     private Double reservePrice;
+
+    @OneToOne
     private Item item;
 
     private Double currentBid;
     private String bidderName;
 
-    public String getAuctionItemId() {
+    public Long getAuctionItemId() {
         return auctionItemId;
     }
 
-    public void setAuctionItemId(String auctionItemId) {
+    public void setAuctionItemId(Long auctionItemId) {
         this.auctionItemId = auctionItemId;
     }
 
