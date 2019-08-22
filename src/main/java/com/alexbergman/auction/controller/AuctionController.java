@@ -14,6 +14,7 @@ public class AuctionController {
     @Autowired
     private AuctionService auctionService;
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping(value = "/auctionItems")
     public List<AuctionItem> getAuctionItems() {
         return auctionService.getAuctionItems();

@@ -1,0 +1,26 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Auction Item Id</th>
+        <th scope="col">Item Id</th>
+        <th scope="col">Item Description</th>
+        <th scope="col">Reserve Price</th>
+        <th scope="col">Current Bid</th>
+        <th scope="col">Bidder Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.auctionItemId }}</td>
+        <td>{{ item.item.itemId }}</td>
+        <td>{{ item.item.description }}</td>
+        <td>{{ item.reservePrice }}</td>
+        <td>{{ item.currentBid }}</td>
+        <td>{{ item.bidderName }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
